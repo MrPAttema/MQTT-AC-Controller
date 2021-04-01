@@ -6,24 +6,24 @@
 /*
 
 {
-"name": "Smart AC",
-"Active": 1,
-"CurrentHeatingCoolingState" : 3,
-"TargetHeaterCoolerState": 2,
-"CurrentTemperature": 26,
+'name': 'Smart AC',
+'Active': 1,
+'CurrentHeatingCoolingState' : 3,
+'TargetHeaterCoolerState': 2,
+'CurrentTemperature': 26,
 
-"service_name" : "smart_ac",
-"service": "HeaterCooler",
-"CoolingThresholdTemperature": { "maxValue": 28, "minValue": 23, "minStep": 1},
-"SwingMode" : 1,
-"RotationSpeed":  { "maxValue": 3, "minValue": 0, "minStep": 1}
+'service_name' : 'smart_ac',
+'service': 'HeaterCooler',
+'CoolingThresholdTemperature': { 'maxValue': 28, 'minValue': 23, 'minStep': 1},
+'SwingMode' : 1,
+'RotationSpeed':  { 'maxValue': 3, 'minValue': 0, 'minStep': 1}
 }
 */
 
 // Constants
-const char *autoconf_ssid = "ESP8266 Smart AC"; //AP name for WiFi setup AP which your ESP will open when not able to connect to other WiFi
-const char *autoconf_pwd = "12345678";          //AP password so noone else can connect to the ESP in case your router fails
-const char *mqtt_server = "192.168.1.15";       //MQTT Server IP, your home MQTT server eg Mosquitto on RPi, or some public MQTT
+const char *autoconf_ssid = 'ESP8266 Smart AC'; //AP name for WiFi setup AP which your ESP will open when not able to connect to other WiFi
+const char *autoconf_pwd = '12345678';          //AP password so noone else can connect to the ESP in case your router fails
+const char *mqtt_server = '192.168.1.15';       //MQTT Server IP, your home MQTT server eg Mosquitto on RPi, or some public MQTT
 const int mqtt_port = 1883;                     //MQTT Server PORT, default is 1883 but can be anything.
 const int btnPower = D5;
 const int btnUp = D6;
@@ -36,12 +36,12 @@ const int IR_pin = D8;
 const int screenBrightnessUpdateInt = 5000;     //Interval time for adjusting screen's brightness according to environment light.
 
 // MQTT Constants
-const char *mqtt_device_value_from_set_topic = "homebridge/from/set";
-const char *mqtt_device_value_to_set_topic = "homebridge/to/set";
-String device_name = "Smart AC";
-String service_name = "smart_ac";
-String device_name_secondary = "Smart AC Basic";
-String service_name_secondary = "smart_ac_basic";
+const char *mqtt_device_value_from_set_topic = 'homebridge/from/set';
+const char *mqtt_device_value_to_set_topic = 'homebridge/to/set';
+String device_name = 'Smart AC';
+String service_name = 'smart_ac';
+String device_name_secondary = 'Smart AC Basic';
+String service_name_secondary = 'smart_ac_basic';
 
 // Global variables
 unsigned int isOn = false;
@@ -61,7 +61,7 @@ int currentContrast = 255;
 // Define NTP properties
 #define NTP_OFFSET  7 * 60 * 60      // In seconds
 #define NTP_INTERVAL 60 * 1000    // In miliseconds
-#define NTP_ADDRESS  "ntp.ku.ac.th"  // change this to whatever pool is closest (see ntp.org)
+#define NTP_ADDRESS  'ntp.ku.ac.th'  // change this to whatever pool is closest (see ntp.org)
 
 #define ACTION_POWER  1
 #define ACTION_UP  2
